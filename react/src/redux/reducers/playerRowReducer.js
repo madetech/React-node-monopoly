@@ -1,8 +1,8 @@
 
-import { SET_COLOR, SET_NAME, SET_TYPE, CHANGE_PLAYERS_NUMBER } from '../actions/playerRowActions';
+import { SET_COLOR, SET_NAME, SET_TYPE, CHANGE_PLAYERS_NUMBER, UPDATE_PLAYER } from '../actions/playerRowActions';
 import {colors} from 'config/playerConfig';
 import {Player} from './entities/Player';
-const initialState = { players:[] };
+const initialState = { players: changePlayerNumber([], 4) };
 
 
 function changePlayerNumber(players, number){
@@ -17,7 +17,7 @@ function changePlayerNumber(players, number){
 
 	return players;
 }
-
+	
 
 export default function(state=initialState, action){
 	switch (action.type) {
@@ -54,6 +54,17 @@ export default function(state=initialState, action){
 		case CHANGE_PLAYERS_NUMBER:
 			state.players=changePlayerNumber(state.players,action.number);
 			return Object.assign({...state});
+
+		case UPDATE_PLAYER:
+			console.log(state.players);
+			return Object.assign({},{
+					...state,
+					players:[	
+						...state.players.slice(0, action.player),
+			    		Object.assign({}, {...state.players[action.player], ...action.entity}),
+			    		...state.players.slice(action.player + 1)
+  					]
+				});
 		default:
 			return state;
 	}

@@ -5,7 +5,7 @@
 
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { counter, setup , playersConfig, squareConfig, gameFunctionality } from './reducers';
+import { counter, setup , playersConfig, squareConfig, gameFunctionality, popupConfig } from './reducers';
 
 export default function (initialState = {}) {
     
@@ -14,7 +14,8 @@ export default function (initialState = {}) {
     	setup , 
     	playersConfig,
     	squareConfig,
-    	gameFunctionality
+    	gameFunctionality,
+    	popupConfig
     });
 
     return createStore(rootReducer, initialState, applyMiddleware(thunk));

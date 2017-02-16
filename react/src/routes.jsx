@@ -24,7 +24,7 @@ export default (
         <IndexRoute component={Setup} />
             <Route component={Game} path='monopoly'/>
         {/*<Route component={CounterPage} path='counters' />
-            <Route component={TimePage} path='time' />
-            <Route component={Setup} path='setup' />*/}
+            <Route component={TimePage} path='time' />*/}
+            <Route component={Setup} path='setup' />
     </Route>
 );

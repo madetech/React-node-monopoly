@@ -19,12 +19,18 @@ class Square extends Component {
                     <div className="row"><span>{`$ ${this.props.price}`||''}</span></div>
               </Popover>
         );
-
-
+        let players="";
+        if(this.props.playerToSquare.length)
+            players=this.props.playerToSquare.map((item,index) => {
+                return (<p key={index}>{item.player}</p>)
+            });
 
         return (
                 <OverlayTrigger trigger={['hover', 'focus']} placement="bottom" overlay={cardData}>
-                    <p>{this.props.name}</p>
+                    <div>
+                        <p>{this.props.name}</p>
+                        {players}
+                    </div>
                 </OverlayTrigger>
         );
     }
