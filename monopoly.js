@@ -1355,6 +1355,7 @@ function updatePosition() {
 	}
 
 	p = player[turn];
+	console.log("Player: ",p);
 
 	if (p.jail) {
 		document.getElementById("jail").style.border = "1px solid " + p.color;

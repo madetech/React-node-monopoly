@@ -11,6 +11,24 @@ class Player {
 		this.chanceJailCard = false;
 		this.bidding = true;
 		this.human = true;
+
+        this.pay = function (amount, creditor, updateMoney) {
+            if (amount <= this.money) {
+                this.money -= amount;
+
+                //updateMoney();
+
+                return true;
+            } else {
+                this.money -= amount;
+                this.creditor = creditor;
+
+                //updateMoney();
+
+                return false;
+            }
+        };
+
 	}
 }
 

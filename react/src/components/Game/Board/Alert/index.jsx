@@ -8,7 +8,7 @@ class Alert extends Component{
     }
 
     render() {
-        let lines = this.props.gameLog.map((e) => (<div>{e}</div>));
+        let lines = this.props.gameLog.map((e,index) => (<div key={"alert"+index}>{e}</div>));
         return <div id="alert">
             {lines}
             </div>

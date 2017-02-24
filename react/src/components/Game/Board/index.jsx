@@ -17,25 +17,35 @@ class Board extends Component {
         // console.log(this.props);
 
         let bottom =[];
-        for(let i=0;i<this.props.squareConfig.squares.length/4+1; i++){
+        for(let i = 0; i<this.props.squareConfig.squares.length/4+1; i++){
             let sq=this.props.squareConfig.squares[i];
-            
+            // console.log('his.props.game.playerToSquare',this.props.game.playerToSquare)
             let playerToSquare = this.props.game.playerToSquare.filter(item =>{
+                // console.log('i',i);
+                // console.log('item.square',item);
                 return item.square == i;
             });
 
 
             if(i==0 || i==this.props.squareConfig.squares.length/4-1)
                 bottom.push( 
-                    (<td key={i} className="cell board-corner">
-                        <Square {...sq} playerToSquare={playerToSquare} index={i} key={i}/>
-                    </td>)
+                    (
+                        <Square {...sq}
+                            class="cell board-corner"
+                                playerToSquare={playerToSquare}
+                                index={i}
+                                key={i}/>
+                    )
                 )
             else
                  bottom.push( 
-                    (<td key={i} className="cell board-bottom">
-                        <Square {...sq} playerToSquare={playerToSquare} index={i} key={i}/>
-                    </td>)
+                    (
+                        <Square {...sq}
+                                class="cell board-bottom"
+                                playerToSquare={playerToSquare}
+                                index={i}
+                                key={i}/>
+                    )
                 )
         }
         bottom=bottom.reverse();
@@ -50,16 +60,20 @@ class Board extends Component {
 
 
             if(i==0 || i==this.props.squareConfig.squares.length/4-1)
-                top.push( 
-                    <td key={i} className="cell board-corner">
-                        <Square {...sq}  playerToSquare={playerToSquare} index={i} key={i}/>
-                    </td>
+                top.push(
+                        <Square {...sq}
+                            class="cell board-corner"
+                                playerToSquare={playerToSquare}
+                                index={i}
+                                key={i}/>
                 )
             else
-                 top.push( 
-                    <td key={i} className="cell board-top">
-                        <Square {...sq}  playerToSquare={playerToSquare} index={i} key={i}/>
-                    </td>
+                 top.push(
+                        <Square {...sq}
+                                class="cell board-top"
+                                playerToSquare={playerToSquare}
+                                index={i}
+                                key={i}/>
                 )
         }
 
@@ -79,18 +93,19 @@ class Board extends Component {
 
             middle.push(
                 <tr>
-                    <td key={i} className="cell board-left">
-                        <Square {...sqLeft} playerToSquare={playerToSquare}  index={i} key={i}/>
-                    </td>
+                        <Square {...sqLeft}
+                                class="cell board-left"
+                                playerToSquare={playerToSquare}
+                                index={i}
+                                key={i}/>
                     <td colSpan={9} className="board-center">
                         <div id="jail"></div>
                     </td>
-                    <td key={this.props.squareConfig.squares.length-i} className="cell board-right">
                         <Square {...sqRight}
+                                class="cell board-right"
                                 playerToSquare={playerToSquare1}  
-                                index={this.props.squareConfig.squares.length-i} 
-                                key={this.props.squareConfig.squares.length-i}/>
-                    </td>
+                                index={this.props.squareConfig.squares.length-i+this.props.squareConfig.squares.length/4}
+                                key={this.props.squareConfig.squares.length-i+this.props.squareConfig.squares.length/4}/>
                 </tr>
             )
         }
@@ -99,12 +114,10 @@ class Board extends Component {
 
         return (
             <div>
-                BOARD
-                    <table id="board">
+                <table id="board">
                         <tbody>
                             <tr>{top}</tr>
                             {middle}
-                           
                             <tr>{bottom}</tr>
                         </tbody>
                     </table>

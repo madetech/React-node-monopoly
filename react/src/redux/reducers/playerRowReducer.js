@@ -56,7 +56,6 @@ export default function(state=initialState, action){
 			return Object.assign({...state});
 
 		case UPDATE_PLAYER:
-			console.log(state.players);
 			return Object.assign({},{
 					...state,
 					players:[	

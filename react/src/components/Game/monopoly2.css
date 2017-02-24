@@ -1,7 +1,124 @@
+/*Main board*/
+#board {
+    display: table;
+    border: 2px solid black;
+    border-spacing: 3px;
+    margin: 25px;
+    float: left;
+}
+
+.house {
+    width: 25px;
+    height: 19px;
+    vertical-align: middle;
+    float: right;
+}
+
+.hotel {
+    width: 26px;
+    height: 19px;
+    vertical-align: middle;
+    float: right;
+}
+
+p {
+    cursor: pointer;
+}
+
+.cell {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    /*vertical-align: bottom;*/
+    background-repeat: no-repeat;
+    background-size: auto 40px;
+    border: 1px solid black;
+}
+
+.board-center {
+    width: 675px;
+    border: none;
+    vertical-align: bottom;
+    background-repeat: no-repeat;
+    background-size: auto 40px;
+}
+
+.board-corner {
+    width: 102px;
+    height: 102px;
+}
+
+.board-top {
+    width: 72px;
+    height: 102px;
+}
+
+.board-bottom {
+    width: 72px;
+    height: 102px;
+}
+
+.board-left {
+    width: 102px;
+    height: 72px;
+}
+
+.board-right {
+    width: 102px;
+    height: 72px;
+}
+
+/*Player poition*/
+.cell-position {
+    height: 12px;
+    width: 12px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+}
+.cell-owner {
+    background-size: cover;
+    display: none;
+    position: absolute;
+}
+
+.board-top .cell-owner {
+    height: 15px;
+    left: 0px;
+    top: -25px;
+    width: 72px;
+
+}
+
+.board-bottom .cell-owner {
+    bottom: -25px;
+    height: 15px;
+    left: 0px;
+    width: 72px;
+}
+
+.board-left .cell-owner {
+    height: 68px;
+    left: -25px;
+    top: 0px;
+    width: 15px;
+
+}
+
+.board-right .cell-owner {
+    height: 68px;
+    right: -25px;
+    top: 0px;
+    width: 15px;
+}
+
+/*center control */
 #control {
     position: absolute;
     top: 379px;
-    left: 45%;
+    left: 25%;
 }
 
 #alert {
