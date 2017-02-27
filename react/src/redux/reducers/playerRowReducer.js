@@ -56,13 +56,23 @@ export default function(state=initialState, action){
 			return Object.assign({...state});
 
 		case UPDATE_PLAYER:
+            let index=-1;
+            let arr = [];
+            for(let i in state.players) {
+                if(state.players[i].player == action.player) {
+                    index = i;
+                    arr[i] = Object.assign({},action.player)
+                } else {
+                    arr[i] = Object.assign({},state.players[i])
+                }
+            }
 			return Object.assign({},{
 					...state,
-					players:[	
-						...state.players.slice(0, action.player),
-			    		Object.assign({}, {...state.players[action.player], ...action.entity}),
-			    		...state.players.slice(action.player + 1)
-  					]
+					players:Object.assign([], arr)
+						// ...state.players.slice(0, action.player),
+			    		// Object.assign({}, {...state.players[action.player], ...action.entity}),
+			    		// ...state.players.slice(action.player + 1)
+  					// ]
 				});
 		default:
 			return state;

@@ -1,10 +1,11 @@
 class Square {
-	constructor({name, pricetext, color, price, groupNumber, baserent, rent1, rent2, rent3, rent4, rent5}) {
+	constructor({name, pricetext, color, price, groupNumber, baserent, rent1, rent2, rent3, rent4, rent5, owner, group}) {
+		console.log('owner',owner)
 		groupNumber = parseInt(groupNumber);
 		this.name = name;
 		this.pricetext = pricetext;
 		this.color = color;
-		this.owner = -1;
+		this.owner = owner || -1;
 		this.mortgage = false;
 		this.house = 0;
 		this.hotel = 0;
@@ -17,6 +18,7 @@ class Square {
 		this.rent4 = (rent4 || 0);
 		this.rent5 = (rent5 || 0);
 		this.landcount = 0;
+		this.group = group || 0;
 
 		if (groupNumber === 3 || groupNumber === 4) {
 			this.houseprice = 50;

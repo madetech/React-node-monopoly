@@ -259,8 +259,7 @@ class ControlBoard extends Component {
 
             this.props.dispatch(gameActions.setLanded({text:"",show:false}));
             this.props.dispatch(playerActions.updatePlayer({playerNumber: this.props.game.currentPlayer, playerEntity: p}));
-            this.props.dispatch(squareActions.updateSquare(p.position, s)
-            );
+            this.props.dispatch(squareActions.updateSquare(p.position, s));
 
         } else {
             this.popup("<p>" + p.name + ", you need $" + (s.price - p.money) + " more to buy " + s.name + ".</p>");
@@ -630,10 +629,17 @@ class ControlBoard extends Component {
                                 {landed}
                             </Tab>
                             <Tab eventKey={2} title="Manage">
-                                <Manage popup={this.popup}/>
+                                <Manage
+                                    popup={this.popup}
+                                    addAlert={this.addAlert}
+                                    updateOwned={this.updateOwned}
+                                    updateMoney={this.updateMoney}/>
                             </Tab>
                             <Tab eventKey={3} title="Trade"  onEnter={()=>this.props.dispatch(tradeActions.showWindow())}>
-                                <TradeModal/>
+                                <TradeModal
+                                    popup={this.popup}
+                                    addAlert={this.addAlert}
+                                />
                             </Tab>
                             {/*nextButton*/}
                         </Tabs>

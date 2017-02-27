@@ -6,10 +6,11 @@ export const SET_BID_TWO 		= 'SET_BID_TWO';
 export const RESET_STATE 		= 'RESET_STATE';
 export const SET_PROPOSE_MODE 	= 'SET_PROPOSE_MODE';
 export const SET_ACCEPT_MODE 	= 'SET_ACCEPT_MODE';
+export const SET_SELECTION_ONE	= 'SET_SELECTION_ONE';
+export const SET_SELECTION_TWO	= 'SET_SELECTION_TWO';
 
 
 export function showWindow(){
-	console.log('show trade window');
 	return { type: SHOW_WINDOW }
 }
 
@@ -35,6 +36,14 @@ export function setAcceptMode(){
 
 export function setProposeMode(){
 	return { type: SET_PROPOSE_MODE }
+}
+
+export function setSelectionModeOne(data){
+    return { type: SET_SELECTION_ONE, data: data  }
+}
+
+export function setSelectionModeTwo(data){
+    return { type: SET_SELECTION_TWO, data: data  }
 }
 
 export function resetState(){

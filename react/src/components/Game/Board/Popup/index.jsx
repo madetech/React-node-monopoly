@@ -77,10 +77,12 @@ class Popup extends Component{
 		if(typeof this.props.action == 'function')
 			action=this.props.action;
 
+
+
 		const modalInstance = (
 			 <Modal show={this.props.show} onHide={action}>
 			      <Modal.Body>
-			        {this.props.text}
+			        <div  dangerouslySetInnerHTML={{__html:this.props.text}} />
 			      </Modal.Body>
 
 			      <Modal.Footer>

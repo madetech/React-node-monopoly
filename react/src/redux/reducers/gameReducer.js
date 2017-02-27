@@ -59,7 +59,6 @@ export default function(state=initialState, action){
 			let index=-1;
 			let arr = [];
 			for(let i in playerToSquare) {
-
 				if(playerToSquare[i].player == action.playerToSquare.player) {
                     index = i;
                     arr[i] = Object.assign({},action.playerToSquare)
