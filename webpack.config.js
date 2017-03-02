@@ -61,8 +61,13 @@ module.exports = {
         loaders: [
             {
                 test: /\.css$/,
+<<<<<<< HEAD:webpack.config.js
                 // loader: 'style!css!'
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
+=======
+                loader: 'style!css!'
+                //loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader')
+>>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/webpack.config.js
             },
             {
                 test: /\.less$/,
