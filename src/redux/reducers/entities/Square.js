@@ -1,18 +1,10 @@
 class Square {
 	constructor({name, pricetext, color, price, groupNumber, baserent, rent1, rent2, rent3, rent4, rent5, owner, group}) {
-<<<<<<< HEAD:src/redux/reducers/entities/Square.js
-=======
-		console.log('owner',owner)
->>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/src/redux/reducers/entities/Square.js
 		groupNumber = parseInt(groupNumber);
 		this.name = name;
 		this.pricetext = pricetext;
 		this.color = color;
-<<<<<<< HEAD:src/redux/reducers/entities/Square.js
 		this.owner = owner > -1 ? owner : -1;
-=======
-		this.owner = owner || -1;
->>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/src/redux/reducers/entities/Square.js
 		this.mortgage = false;
 		this.house = 0;
 		this.hotel = 0;

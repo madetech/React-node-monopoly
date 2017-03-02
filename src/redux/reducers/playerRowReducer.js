@@ -64,20 +64,13 @@ export default function(state=initialState, action){
             let index=-1;
             let arr = [];
             for(let i in state.players) {
-<<<<<<< HEAD:src/redux/reducers/playerRowReducer.js
                 if(i == action.player) {
                     index = i;
                     arr[i] = Object.assign({},action.entity);
-=======
-                if(state.players[i].player == action.player) {
-                    index = i;
-                    arr[i] = Object.assign({},action.player)
->>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/src/redux/reducers/playerRowReducer.js
                 } else {
                     arr[i] = Object.assign({},state.players[i])
                 }
             }
-<<<<<<< HEAD:src/redux/reducers/playerRowReducer.js
 			return Object.assign({},{ ...state, players:Object.assign([], arr)});
         case ELIMINATE_PLAYER:
             let arr2 = [];
@@ -86,16 +79,6 @@ export default function(state=initialState, action){
                     arr2[i] = Object.assign({}, state.players[i]);
                 }
             return Object.assign({ ...state, players: Object.assign([], arr2)});
-=======
-			return Object.assign({},{
-					...state,
-					players:Object.assign([], arr)
-						// ...state.players.slice(0, action.player),
-			    		// Object.assign({}, {...state.players[action.player], ...action.entity}),
-			    		// ...state.players.slice(action.player + 1)
-  					// ]
-				});
->>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/src/redux/reducers/playerRowReducer.js
 		default:
 			return state;
 	}

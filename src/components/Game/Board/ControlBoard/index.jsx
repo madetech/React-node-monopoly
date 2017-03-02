@@ -850,7 +850,7 @@ class ControlBoard extends Component {
         } else {
             this.addAlert(p.name + " rolled " + (die1 + die2) + ".");
         }
-        console.log('p1',p)
+
         if (die1 == die2 && !p.jail) {
             //@view обновление костей
             // updateDice(die1, die2);

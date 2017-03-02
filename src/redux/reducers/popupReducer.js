@@ -13,7 +13,6 @@ export default function(state=initialState, action){
 		case SET_OPTION:
 			return Object.assign({ ...state, option: action.option });
 		case SET_POPUP_CONFIG:
-			console.log('config',action.config)
 			return Object.assign({ ...state, ...action.config });
 		default:
 			return state;

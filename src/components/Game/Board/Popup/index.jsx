@@ -77,17 +77,11 @@ class Popup extends Component{
 		if(typeof this.props.action == 'function')
 			action=this.props.action;
 
-
-
 		const modalInstance = (
 			 <Modal show={this.props.show} onHide={action}>
 			      <Modal.Body>
-<<<<<<< HEAD:src/components/Game/Board/Popup/index.jsx
 					  {this.props.image && <img src={this.props.image} style={{height: "50px", width: "53px", float: "left", margin: "8px 8px 8px 0px"}} />}
 					  <div  dangerouslySetInnerHTML={{__html:this.props.text}} />
-=======
-			        <div  dangerouslySetInnerHTML={{__html:this.props.text}} />
->>>>>>> 0d6c6226f9b058493cde3ec406db9949e1d3de76:react/src/components/Game/Board/Popup/index.jsx
 			      </Modal.Body>
 
 			      <Modal.Footer>
