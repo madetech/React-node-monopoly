@@ -5,3 +5,9 @@ This is a basic JavaScript/HTML/CSS Monopoly implementation. Up to eight players
 Play online at [https://intrepidcoder.github.io/monopoly/](https://intrepidcoder.github.io/monopoly/) or [http://www.intrepidcoder.com/projects/monopoly/](http://www.intrepidcoder.com/projects/monopoly/) (alternate version).
 
 New: Added capability to play against an AI. A AI for demonstration purposes only is included. A future update will include a more realistic opponent.
+
+Run ganache:
+
+```
+ganache-cli -m 'test'
+```
