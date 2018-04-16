@@ -1,9 +1,18 @@
-var Player = artifacts.require("./Player.sol");
+var Players = artifacts.require("./Players.sol");
 
-contract("Player", () =>
-  it("passes", () => {
-    Player.deployed().then((instance) =>
-      assert.equal(instance.getName(), "")
-    )
-  })
-)
+contract('Player', function(accounts) {
+  it("can join the game", function() {
+    return Players.deployed().then(function(instance) {
+      instance.join("bob");
+    });
+  });
+
+  it("can find out the players in the game", function() {
+    return Players.deployed().then(function(instance) {
+      instance.join("bob")
+      return instance.get().then(function(result) {
+        assert.equal(result, ["bob"])
+      })
+    });
+  });
+});
