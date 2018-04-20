@@ -1,8 +1,18 @@
 pragma solidity ^0.4.18;
 
 contract Players {
-  function join (string name) public pure { }
-  function get () public view returns (address whoCalledThis) {
-    return msg.sender;
+  struct Player {
+    string name;
+  }
+
+  mapping(address => Player) addressToPlayer;
+
+  function join (string name) public {
+    addressToPlayer[msg.sender] = Player(
+      name
+    );
+  }
+  function get () public view returns (string playerName) {
+    return addressToPlayer[msg.sender].name;
   }
 }

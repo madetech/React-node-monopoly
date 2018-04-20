@@ -9,9 +9,9 @@ contract('Player', function(accounts) {
 
   it("can find out the players in the game", function() {
     return Players.deployed().then(function(instance) {
-      instance.join("bob")
+      instance.join("bob");
       return instance.get().then(function(result) {
-        assert.equal(result, ["bob"])
+        assert.equal(result, "bob");
       })
     });
   });
