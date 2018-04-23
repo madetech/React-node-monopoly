@@ -12,7 +12,8 @@ contract Players {
       name
     );
   }
-  function get () public view returns (string playerName) {
+
+  function getCurrentPlayer () public view returns (string playerName) {
     return addressToPlayer[msg.sender].name;
   }
 }

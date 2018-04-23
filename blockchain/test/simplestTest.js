@@ -6,13 +6,29 @@ contract('Player', function(accounts) {
       instance.join("bob");
     });
   });
+});
 
-  it("can find out the players in the game", function() {
+// If this test is uncommented, then the tests pass.
+// If it's commented, the tests fail.
+// wtf.
+;
+// contract('Player', function(accounts) {
+//   it("can find my player name", function() {
+//     return Players.deployed().then(function(instance) {
+//       instance.join("bob");
+//       return instance.getCurrentPlayer().then(function(result) {
+//         assert.equal(result, "bob");
+//       });
+//     });
+//   });
+// });
+
+contract('Player', function(accounts) {
+  it("returns null if I haven't joined", function() {
     return Players.deployed().then(function(instance) {
-      instance.join("bob");
-      return instance.get().then(function(result) {
-        assert.equal(result, "bob");
-      })
+      return instance.getCurrentPlayer().then(function(result) {
+        assert.equal(result, '');
+      });
     });
   });
 });
