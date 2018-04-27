@@ -14,6 +14,8 @@ contract PropertyOwnership is PropertyBase, ERC721Token {
   function buy(uint256 _propertyId) payable {
     require(msg.value >= properties[_propertyId].buy_price);
     // todo
+
+    return _transfer(propertyToOwner[_propertyId], msg.sender, _propertyId);
   }
 
   function _createProperty(
