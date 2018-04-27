@@ -14,7 +14,8 @@ contract GameSetup is PropertyOwnership {
     );
   }
 
-  function getProperty(uint256 index) external returns(address) {
+  // TODO: move it to a better place
+  function getPropertyOwner(uint256 index) external returns(address) {
     return propertyToOwner[index];
   }
 }
