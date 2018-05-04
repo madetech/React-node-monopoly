@@ -11,7 +11,7 @@ contract('Player', function(accounts) {
     return Players.new().then(function(instance) {
       instance.join("bob", { value: 1 });
       return instance.getCurrentPlayer().then(function(result) {
-        assert.equal(result, "bob");
+        assert.equal(result[0], "bob");
       });
     });
   });
