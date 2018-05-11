@@ -11,6 +11,14 @@ Our current tasks are:
 
 ## Installation
 
+Install truffle framework globally in your system:
+
+```
+npm install -g truffle
+```
+
+See [Truffle Quickstart](http://truffleframework.com/docs/getting_started/project) documentation for commands.
+
 To install all dependencies for smart contracts run:
 
 ```
