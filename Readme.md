@@ -26,7 +26,7 @@ cd blockchain/
 npm install
 ```
 
-React UI is a standalone project and doesn’t require any additional steps. Open `index.html` in your favorite browser and it will work right away.
+React UI is a standalone project and doesn’t require any additional steps. Open `index.html` from the root directory in your favorite browser and it will work right away.
 
 ## Development
 
@@ -54,5 +54,6 @@ Using the same mnemonic every time (`-m` option, normally it's composed of 24 wo
 To run tests execute:
 
 ```
+cd blockchain/
 truffle test
 ```
