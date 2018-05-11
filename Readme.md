@@ -33,7 +33,7 @@ For development we use:
 
 ## Testing
 
-To create a local chain on development machines we use [ganache-cli](https://github.com/trufflesuite/ganache-cli). We found it to be more stable than [GUI version](https://github.com/trufflesuite/ganache) of Ganache which oftens hangs completely on macOS.
+To create a local chain on development machines we use [ganache-cli](https://github.com/trufflesuite/ganache-cli). We found it to be more stable than [GUI version](https://github.com/trufflesuite/ganache) of Ganache which often has problems on macOS.
 
 Start your local chain:
 
