@@ -20,5 +20,6 @@ module.exports = function(deployer) {
   deployer.link(PropertyOwnership, GameSetup);
   deployer.deploy(GameSetup);
 
+  deployer.link(PropertyAccessControl, Jail);
   deployer.deploy(Jail);
 };
