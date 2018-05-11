@@ -20,8 +20,7 @@ contract('Player', function(accounts) {
     return Players.new().then(function(instance) {
       instance.join("bob", { value: 1 });
       return instance.getCurrentPlayer().then(function(result) {
-        console.log(result)
-        assert.equal(balance, 1500);
+        assert.equal(result, 1500);
       });
     });
   });
@@ -40,7 +39,7 @@ contract('Player', function(accounts) {
         assert.ok(true);
       });
     });
-  });
+  })
 
   it("requires no more than 1 ETH", function(){
     return Players.new().then(function(instance) {
