@@ -38,6 +38,7 @@ For development we use:
 * [OpenZeppelin](https://openzeppelin.org/) as a standard library
 * [web3.js](https://github.com/ethereum/web3.js/) as a client
 * [ganache-cli](https://github.com/trufflesuite/ganache-cli) as a local chain
+* [Remix IDE](https://remix.ethereum.org/) to share snippets of code between pairs
 
 ## Testing
 
