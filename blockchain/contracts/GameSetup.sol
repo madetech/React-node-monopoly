@@ -7,7 +7,7 @@ contract GameSetup is PropertyOwnership {
     _createProperty(
       'Mayfair',
       0x0000,
-      200,
+      10,
       50,
       0,
       0
