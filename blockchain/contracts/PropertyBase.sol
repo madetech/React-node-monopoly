@@ -1,8 +1,8 @@
 pragma solidity ^0.4.19;
 
-import './PropertyAccessControl.sol';
+import './Jail.sol';
 
-contract PropertyBase is PropertyAccessControl {
+contract PropertyBase is Jail {
   struct Property {
     bytes32 name;
     uint32 color;
