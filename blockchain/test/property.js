@@ -33,9 +33,23 @@ contract('Game', accounts => {
      const deployed_game = await Game.deployed()
      await deployed_game.setup();
      const initial_balance = await web3.eth.getBalance(accounts[1]).toNumber();
-     const txInfo = await deployed_game.buy(1, { value: web3.toWei(10, 'ether'), from: accounts[1] });
+     const txInfo = await deployed_game.buy(1, { value: web3.toWei(10, "ether"), from: accounts[1] });
      const final_balance = await web3.eth.getBalance(accounts[1]).toNumber();
-     const firstPropertyOwner = await deployed_game.getPropertyOwner.call(1);
+
+     const tx = await web3.eth.getTransaction(txInfo.tx);
+     const gasCost = tx.gasPrice.mul(txInfo.receipt.gasUsed);
+
+     assert.equal(
+       parseInt(web3.fromWei(initial_balance, "ether")) - 10 - parseInt(web3.fromWei(gasCost, "ether")),
+       parseInt(web3.fromWei(final_balance, "ether")))
+   });
+
+   it("refunds", async () => {
+     const deployed_game = await Game.deployed()
+     await deployed_game.setup();
+     const initial_balance = await web3.eth.getBalance(accounts[1]).toNumber();
+     const txInfo = await deployed_game.buy(1, { value: web3.toWei(20, "ether"), from: accounts[1] });
+     const final_balance = await web3.eth.getBalance(accounts[1]).toNumber();
 
      const tx = await web3.eth.getTransaction(txInfo.tx);
      const gasCost = tx.gasPrice.mul(txInfo.receipt.gasUsed);
